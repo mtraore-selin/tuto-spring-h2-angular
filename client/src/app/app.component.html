@@ -1,0 +1,49 @@
+<div class="app-container">
+  <!-- Modern Navigation Bar -->
+  <nav class="app-navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a routerLink="/" class="logo-link">
+          <span class="logo-icon">GMDT</span>
+          <span class="logo-text">Knowledge Base</span>
+        </a>
+      </div>
+
+      <div class="nav-links">
+        <a routerLink="tutorials" class="nav-link" routerLinkActive="active">
+          <i class="fas fa-book-open link-icon"></i>
+          <span class="link-text">Tutorials</span>
+        </a>
+        <a routerLink="add" class="nav-link" routerLinkActive="active">
+          <i class="fas fa-plus-circle link-icon"></i>
+          <span class="link-text">Add New</span>
+        </a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="app-content">
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <!-- Optional Footer -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <span>© 2023 GMDT Knowledge Base</span>
+      <div class="footer-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+</div>

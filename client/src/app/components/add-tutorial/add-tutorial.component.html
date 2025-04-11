@@ -1,0 +1,92 @@
+<div class="form-container">
+  <div class="form-card">
+    @if (!submissionState.submitted) {
+    <div class="form-header">
+      <h2 class="form-title">Create New Tutorial</h2>
+      <p class="form-subtitle">Share your knowledge with the community</p>
+    </div>
+
+    <form class="tutorial-form" (ngSubmit)="saveTutorial()">
+      <div class="form-group">
+        <label for="title" class="input-label">Title</label>
+        <input
+          type="text"
+          class="form-input"
+          id="title"
+          required
+          [(ngModel)]="tutorial.title"
+          name="title"
+          placeholder="Enter tutorial title"
+        />
+        <span class="input-focus-border"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="description" class="input-label">Description</label>
+        <textarea
+          class="form-input textarea"
+          id="description"
+          required
+          [(ngModel)]="tutorial.description"
+          name="description"
+          rows="4"
+          placeholder="Describe what this tutorial covers"
+        ></textarea>
+        <span class="input-focus-border"></span>
+      </div>
+
+      <div class="form-footer">
+        @if (submissionState.error) {
+        <div class="error-message">
+          <i class="fas fa-exclamation-circle"></i>
+          {{ submissionState.error }}
+        </div>
+        }
+
+        <button
+          type="submit"
+          class="submit-button"
+          [disabled]="submissionState.inProgress"
+        >
+          @if (submissionState.inProgress) {
+          <i class="fas fa-spinner fa-spin"></i>
+          Submitting... } @else {
+          <i class="fas fa-paper-plane"></i>
+          Submit Tutorial }
+        </button>
+      </div>
+    </form>
+    } @else {
+    <div class="success-state">
+      <div class="success-animation">
+        <svg
+          class="checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 52 52"
+        >
+          <circle
+            class="checkmark__circle"
+            cx="26"
+            cy="26"
+            r="25"
+            fill="none"
+          />
+          <path
+            class="checkmark__check"
+            fill="none"
+            d="M14.1 27.2l7.1 7.2 16.7-16.8"
+          />
+        </svg>
+      </div>
+      <h3 class="success-title">Tutorial Submitted Successfully!</h3>
+      <p class="success-message">
+        Your knowledge has been shared with the community
+      </p>
+      <button class="new-button" (click)="resetForm()">
+        <i class="fas fa-plus"></i>
+        Create Another Tutorial
+      </button>
+    </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="tutorials-container">
+  <div class="tutorials-header">
+    <h2 class="tutorials-title">Tutorials Management</h2>
+    <p class="tutorials-subtitle">Global Management Dashboard (GMDT)</p>
+
+    <div class="search-container">
+      <div class="search-box">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search tutorials by title..."
+          [(ngModel)]="title"
+          (keyup.enter)="searchByTitle()"
+        />
+        <button class="search-button" (click)="searchByTitle()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tutorials-content">
+    <div class="tutorials-list-container">
+      <div class="list-header">
+        <h3 class="list-title">
+          <i class="fas fa-list-ul list-icon"></i>
+          Tutorials List
+        </h3>
+        <span class="badge">{{ tutorials.length }} items</span>
+      </div>
+
+      <div class="tutorials-list">
+        @for (tutorial of tutorials; track tutorial.id; let i = $index) {
+        <div
+          class="tutorial-item"
+          [class.active]="i == currentIndex"
+          (click)="setActiveTutorial(tutorial, i)"
+        >
+          <div class="tutorial-info">
+            <span class="tutorial-title">{{ tutorial.title }}</span>
+            <span
+              class="tutorial-status"
+              [class.published]="tutorial.published"
+            >
+              {{ tutorial.published ? "Published" : "Draft" }}
+            </span>
+          </div>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </div>
+        } @empty {
+        <div class="empty-state">
+          <i class="fas fa-book-open empty-icon"></i>
+          <p class="empty-message">No tutorials found</p>
+        </div>
+        }
+      </div>
+
+      <button class="clear-all-button" (click)="clearAllTutorials()">
+        <i class="fas fa-trash-alt"></i>
+        Clear All Tutorials
+      </button>
+    </div>
+
+    <div class="tutorial-details-container">
+      @if (currentTutorial) {
+      <app-tutorial-details
+        [viewMode]="true"
+        [currentTutorial]="currentTutorial"
+      ></app-tutorial-details>
+      } @else {
+      <div class="no-selection">
+        <i class="fas fa-hand-pointer"></i>
+        <h3>Select a tutorial</h3>
+        <p>Click on an item from the list to view details</p>
+      </div>
+      }
+    </div>
+  </div>
+</div>

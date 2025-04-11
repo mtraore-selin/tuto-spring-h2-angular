@@ -1,0 +1,225 @@
+/* General Styles */
+:host {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* View Mode Styles */
+.tutorial-view {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tutorial-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.card-header {
+  background-color: #4a6baf;
+  color: white;
+  border-radius: 8px 8px 0 0 !important;
+  padding: 15px 20px;
+}
+
+.card-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 25px;
+}
+
+.detail-row {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.detail-label {
+  font-weight: 600;
+  min-width: 100px;
+  color: #555;
+}
+
+.detail-value {
+  flex: 1;
+  color: #333;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+.status-badge.published {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.card-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #eee;
+  padding: 15px 20px;
+  text-align: right;
+  border-radius: 0 0 8px 8px;
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: #212529;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-edit:hover {
+  background-color: #e0a800;
+  transform: translateY(-1px);
+}
+
+/* Edit Form Styles */
+.edit-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-control {
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  transition: border 0.2s;
+}
+
+.form-control:focus {
+  border-color: #4a6baf;
+  box-shadow: 0 0 0 0.2rem rgba(74, 107, 175, 0.25);
+}
+
+textarea.form-control {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.status-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.btn-action {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.btn-action i {
+  font-size: 0.9rem;
+}
+
+.btn-publish {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-publish:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.btn-unpublish {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-unpublish:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+.btn-delete {
+  background-color: #f8f9fa;
+  color: #dc3545;
+  border: 1px solid #ddd;
+}
+
+.btn-delete:hover {
+  background-color: #e2e6ea;
+  transform: translateY(-1px);
+}
+
+.btn-save {
+  background-color: #4a6baf;
+  color: white;
+  margin-left: auto;
+}
+
+.btn-save:hover {
+  background-color: #3a5a9f;
+  transform: translateY(-1px);
+}
+
+/* Empty States */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  color: #666;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #bbb;
+}
+
+.empty-text {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.error-state .empty-icon {
+  color: #dc3545;
+}
+
+/* Message Box */
+.message-box {
+  margin-top: 20px;
+  border-radius: 4px;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
