@@ -199,21 +199,7 @@ Project Link: [https://github.com/mtraore-selin/tuto-spring-h2-angular.git](http
 2. Save them in your project's `/documentation/images` folder
 3. Replace the placeholder URLs with relative paths:
    ```markdown
-   ![Tutorials List](./documentation/images/tutorials-list.png)
-   ![Add Tutorial](./documentation/images/add-tutorial.png)
-   ![Contact Page](./documentation/images/contact-page.png)
+   ![Tutorials List](./screenshots/list.jpg)
+   ![Add Tutorial](./screenshots/add.png)
+   ![Contact Page](./screenshots/contact.jpg)
 ````
-
-This README includes:
-
-- Project overview
-- Visual representation
-- Technology stack
-- Installation instructions
-- API documentation
-- Project structure
-- Development workflow
-- Deployment options
-- Contribution guidelines
-
-You can customize any section to better match your specific implementation details.
